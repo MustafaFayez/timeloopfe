@@ -29,6 +29,7 @@ if __name__ == "__main__":
         17: "sparseloop/04.2.2-eyeriss-like-gating-mapspace-search",
         18: "sparseloop/04.2.3-eyeriss-like-onchip-compression",
         19: "raella",
+        20: "a100",
     }
 
     CHOICE = 0 if len(sys.argv) < 2 else int(sys.argv[1])
