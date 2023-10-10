@@ -1,8 +1,8 @@
 problem:
   instance:
-    K: 1024 
-    M: 1024 
-    N: 1024 
+    M: 512 
+    N: 512 
+    K: 64 
     densities:
       A:
         density: 1

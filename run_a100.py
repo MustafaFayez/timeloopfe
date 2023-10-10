@@ -32,20 +32,23 @@ if __name__ == "__main__":
         20: "a100",
     }
 
-    CHOICE = 0 if len(sys.argv) < 2 else int(sys.argv[1])
+    CHOICE = 20
     SPLIT = True
+    m = sys.argv[1]
+    n = sys.argv[2]
+    k = sys.argv[3]
 
     assert (
         CHOICE in OPTIONS
     ), f'Invalid choice "{CHOICE}". Choose from {list(OPTIONS.keys())}'
 
     cinstr = "_split" if SPLIT else ""
-    TARGET = [f"{OPTIONS[CHOICE]}/arch{cinstr}", "problem", "mapper"]
+    TARGET = [f"{OPTIONS[CHOICE]}/arch{cinstr}_{m}_{n}_{k}", f"{OPTIONS[CHOICE]}/problem_{m}_{n}_{k}", "mapper"]
     TARGET = [os.path.join("arch_spec_examples", f"{t}.yaml") for t in TARGET]
 
-    alt_prob = f"problem_{OPTIONS[CHOICE]}"
-    if os.path.exists(TARGET[1].replace("problem", alt_prob)):
-        TARGET[1] = TARGET[1].replace("problem", alt_prob)
+    # alt_prob = f"problem_{OPTIONS[CHOICE]}"
+    # if os.path.exists(TARGET[1].replace("problem", alt_prob)):
+    #     TARGET[1] = TARGET[1].replace("problem", alt_prob)
 
     # Add in some extra files for Sparseloop inputs
     if "sparseloop" in OPTIONS[CHOICE]:
@@ -66,6 +69,6 @@ if __name__ == "__main__":
     # for_model = True
     # Run the mapper or model
     if for_model:
-        tl.model(spec, "./outdir/")
+        tl.model(spec, "./outdir_"+OPTIONS[CHOICE]+"/"+m+"_"+n+"_"+k+"/")
     else:
-        tl.mapper(spec, "./outdir/")
+        tl.mapper(spec, "./outdir_"+OPTIONS[CHOICE]+"/"+m+"_"+n+"_"+k+"/")

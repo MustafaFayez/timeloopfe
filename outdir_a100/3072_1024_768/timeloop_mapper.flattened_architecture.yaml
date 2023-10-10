@@ -1,0 +1,194 @@
+architecture:
+    version: '0.4'
+    local:
+      - name: top_level.DRAM[1..1]
+        class: DRAM
+        attributes:
+            type: "LPDDR4"
+            width: 5120
+            datawidth: 8
+            cluster_size: 1
+            read_bandwidth: 1300
+            write_bandwidth: 1300
+            technology: -1
+            n_banks: 2
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 1
+            meshY: 1
+        required_actions:
+          - read
+          - update
+          - write
+          - read
+          - write
+          - update
+          - idle
+      - name: top_level.L2[1..1]
+        class: storage
+        subclass: SRAM_MD
+        attributes:
+            data_storage_depth: 81920
+            data_storage_width: 4096
+            n_banks: 5120
+            n_rdwr_ports: 2
+            datawidth: 8
+            cluster_size: 1
+            read_bandwidth: 4468
+            write_bandwidth: 4468
+            technology: -1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 1
+            meshY: 1
+        required_actions:
+          - read
+          - update
+          - write
+          - read
+          - write
+          - update
+          - idle
+      - name: top_level.inter_SM_spatial_dummy[1..1]
+        class: dummy_storage
+        attributes:
+            width: 1
+            depth: 1
+            datawidth: 1
+            technology: -1
+            n_banks: 2
+            cluster_size: 1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 1
+            meshY: 1
+      - name: top_level.SMEM[1..108]
+        class: storage
+        subclass: SRAM_MD
+        attributes:
+            data_storage_depth: 1312
+            data_storage_width: 1024
+            n_banks: 16
+            n_rdwr_ports: 2
+            metadata_storage_depth: 8192
+            metadata_storage_width: 64
+            datawidth: 8
+            cluster_size: 1
+            read_bandwidth: 112
+            write_bandwidth: 112
+            technology: -1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 108
+            meshY: 1
+        required_actions:
+          - read
+          - update
+          - write
+          - read
+          - write
+          - update
+          - idle
+      - name: top_level.inter_Subpartition_spatial_dummy[1..108]
+        class: dummy_storage
+        attributes:
+            width: 1
+            depth: 1
+            datawidth: 1
+            technology: -1
+            n_banks: 2
+            cluster_size: 1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 108
+            meshY: 1
+      - name: top_level.RF[1..432]
+        class: storage
+        subclass: SRAM_MD
+        attributes:
+            data_storage_depth: 64
+            data_storage_width: 8192
+            n_banks: 128
+            n_rdwr_ports: 2
+            datawidth: 8
+            cluster_size: 1
+            technology: -1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 108
+            meshY: 4
+        required_actions:
+          - read
+          - update
+          - write
+          - read
+          - write
+          - update
+          - idle
+      - name: top_level.inter_PE_spatial_dummy[1..432]
+        class: dummy_storage
+        attributes:
+            width: 1
+            depth: 1
+            datawidth: 1
+            technology: -1
+            n_banks: 2
+            cluster_size: 1
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 108
+            meshY: 4
+      - name: top_level.LRF[1..221184]
+        class: storage
+        subclass: SRAM_MD
+        attributes:
+            data_storage_depth: 1
+            data_storage_width: 8
+            metadata_storage_depth: 1
+            metadata_storage_width: 8
+            datawidth: 8
+            cluster_size: 1
+            technology: -1
+            n_banks: 2
+            reduction_supported: true
+            multiple_buffering: 1
+            min_utilization: 0
+            allow_overbooking: false
+            meshX: 3456
+            meshY: 64
+        required_actions:
+          - read
+          - update
+          - write
+          - read
+          - write
+          - update
+          - idle
+      - name: top_level.MAC[1..221184]
+        class: compute
+        subclass: Imac
+        attributes:
+            datawidth: 8
+            technology: -1
+            meshX: 3456
+            meshY: 64
+        required_actions:
+          - compute
+          - read
+          - write
+          - update
+          - idle

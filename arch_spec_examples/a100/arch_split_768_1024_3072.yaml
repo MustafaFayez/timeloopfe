@@ -116,8 +116,8 @@ constraints:
   #
   - target: L2
     type: temporal
-    permutation: [K]
-    factors: [K=8, M=1] 
+    permutation: [M]
+    factors: [K=1, M=6] 
   
   - target: L2
     type: dataspace
@@ -125,8 +125,8 @@ constraints:
 
   - target: SM
     type: spatial
-    permutation: [MN]
-    factors: [M=8, N >= 4]
+    permutation: [KN]
+    factors: [K=12, N=8]
 
   # - target: SM
   #   type: temporal
@@ -150,7 +150,7 @@ constraints:
 
   - target: SMEM
     type: temporal
-    factors: [K=1, M=1, N = 8]
+    factors: [K=1, M=1, N=8]
     permutation: [K]
 
   #
@@ -159,7 +159,7 @@ constraints:
   # RF share the same M, N factor as LRF as LRF only store A not Z
   - target: RF
     type: temporal
-    factors: [K=8, M=1, N=1]
+    factors: [K=16, M=1, N=1]
     permutation: [N, K, M]
 
   # RF is an accumulator
@@ -180,7 +180,7 @@ constraints:
   #
   - target: LRF
     type: temporal     
-    factors: [M=1, N = 16]    
+    factors: [M=1, N=16]    
     permutation: [N, K, M]
   
   - target: LRF

@@ -1,0 +1,21 @@
+ART:
+    version: '0.4'
+    tables:
+      - name: top_level.DRAM[1..1]
+        area: 1.0
+      - name: top_level.L2[1..1]
+        area: 1.0
+      - name: top_level.inter_SM_spatial_dummy[1..1]
+        area: 1.0
+      - name: top_level.SMEM[1..108]
+        area: 1.0
+      - name: top_level.inter_Subpartition_spatial_dummy[1..108]
+        area: 1.0
+      - name: top_level.RF[1..432]
+        area: 1.0
+      - name: top_level.inter_PE_spatial_dummy[1..432]
+        area: 1.0
+      - name: top_level.LRF[1..221184]
+        area: 1.0
+      - name: top_level.MAC[1..221184]
+        area: 1.0

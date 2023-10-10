@@ -117,7 +117,7 @@ constraints:
   - target: L2
     type: temporal
     permutation: [K]
-    factors: [K=8, M=1] 
+    factors: [K=6, M=1] 
   
   - target: L2
     type: dataspace
@@ -126,7 +126,7 @@ constraints:
   - target: SM
     type: spatial
     permutation: [MN]
-    factors: [M=8, N >= 4]
+    factors: [M=12, N=8]
 
   # - target: SM
   #   type: temporal
@@ -150,7 +150,7 @@ constraints:
 
   - target: SMEM
     type: temporal
-    factors: [K=1, M=1, N = 8]
+    factors: [K=1, M=1, N=8]
     permutation: [K]
 
   #
@@ -171,7 +171,7 @@ constraints:
     # spatial K upper limited by a density 2:4
   - target: PE
     type: spatial
-    factors: [K=16, M=32, N=1]
+    factors: [K=16, M=16, N=1]
     permutation: [M, K, N]
     split: 1
  
@@ -180,7 +180,7 @@ constraints:
   #
   - target: LRF
     type: temporal     
-    factors: [M=1, N = 16]    
+    factors: [M=1, N=16]    
     permutation: [N, K, M]
   
   - target: LRF

@@ -15,7 +15,7 @@ architecture:
       width: 5120
       datawidth: 8
       cluster_size: 1
-      read_bandwidth: 1300 # 2039 GB/s / 1.41 * 0.9
+      read_bandwidth: 1300 # 2039 GB/s / 1.41 GHz * 0.9
       write_bandwidth: 1300 
     constraints:
       temporal: {permutation: [K], factors: K=1}
@@ -117,7 +117,7 @@ constraints:
   - target: L2
     type: temporal
     permutation: [K]
-    factors: [K=8, M=1] 
+    factors: [K=1, M=1] 
   
   - target: L2
     type: dataspace
@@ -126,7 +126,7 @@ constraints:
   - target: SM
     type: spatial
     permutation: [MN]
-    factors: [M=8, N >= 4]
+    factors: [M=8, N=8]
 
   # - target: SM
   #   type: temporal
@@ -150,7 +150,7 @@ constraints:
 
   - target: SMEM
     type: temporal
-    factors: [K=1, M=1, N = 8]
+    factors: [K=1, M=1, N=8]
     permutation: [K]
 
   #
@@ -159,7 +159,7 @@ constraints:
   # RF share the same M, N factor as LRF as LRF only store A not Z
   - target: RF
     type: temporal
-    factors: [K=8, M=1, N=1]
+    factors: [K=4, M=1, N=1]
     permutation: [N, K, M]
 
   # RF is an accumulator
@@ -180,7 +180,7 @@ constraints:
   #
   - target: LRF
     type: temporal     
-    factors: [M=1, N = 16]    
+    factors: [M=1, N=16]    
     permutation: [N, K, M]
   
   - target: LRF
