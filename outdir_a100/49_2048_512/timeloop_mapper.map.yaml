@@ -1,0 +1,104 @@
+mapping:
+  - target: LRF
+    type: datatype
+    keep:
+      - A
+    bypass:
+      - B
+      - Z
+  - target: inter_PE_spatial_dummy
+    type: datatype
+    keep:
+      []
+    bypass:
+      - A
+      - B
+      - Z
+  - target: RF
+    type: datatype
+    keep:
+      - Z
+    bypass:
+      - A
+      - B
+  - target: inter_Subpartition_spatial_dummy
+    type: datatype
+    keep:
+      []
+    bypass:
+      - A
+      - B
+      - Z
+  - target: SMEM
+    type: datatype
+    keep:
+      - A
+      - B
+    bypass:
+      - Z
+  - target: inter_SM_spatial_dummy
+    type: datatype
+    keep:
+      []
+    bypass:
+      - A
+      - B
+      - Z
+  - target: L2
+    type: datatype
+    keep:
+      - A
+      - B
+      - Z
+    bypass:
+      []
+  - target: DRAM
+    type: datatype
+    keep:
+      - A
+      - B
+      - Z
+    bypass:
+      []
+  - target: LRF
+    type: temporal
+    factors: M1 N8 K1
+    permutation: NMK
+  - target: inter_PE_spatial_dummy
+    type: spatial
+    factors: M7 N1 K32
+    permutation: KMN
+    split: 1
+  - target: inter_PE_spatial_dummy
+    type: temporal
+    factors: M1 N1 K1
+    permutation: MNK
+  - target: RF
+    type: temporal
+    factors: M1 N1 K4
+    permutation: KMN
+  - target: inter_Subpartition_spatial_dummy
+    type: temporal
+    factors: M1 N1 K1
+    permutation: MNK
+  - target: SMEM
+    type: temporal
+    factors: M1 N1 K1
+    permutation: MNK
+  - target: inter_SM_spatial_dummy
+    type: spatial
+    factors: M1 N64 K1
+    permutation: NMK
+    split: 1
+  - target: inter_SM_spatial_dummy
+    type: temporal
+    factors: M1 N1 K1
+    permutation: MNK
+  - target: L2
+    type: temporal
+    factors: M7 N4 K4
+    permutation: KMN
+  - target: DRAM
+    type: temporal
+    factors: M1 N1 K1
+    permutation: MNK

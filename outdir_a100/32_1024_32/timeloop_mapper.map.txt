@@ -1,0 +1,24 @@
+DRAM [ A:1024 (1024) B:32768 (32768) Z:32768 (32768) ] 
+L2 [ A:1024 (1024) B:32768 (32768) Z:32768 (32768) ] 
+inter_SM_spatial_dummy [ ] 
+--------------------------
+| for N in [0:64) (Spatial-X)
+
+SMEM [ A:1024 (1024) B:512 (512) ] 
+----------------------------------
+|   for N in [0:2)
+
+inter_Subpartition_spatial_dummy [ ] 
+------------------------------------
+|     for M in [0:2) (Spatial-Y)
+
+RF [ Z:128 (128) ] 
+inter_PE_spatial_dummy [ ] 
+--------------------------
+|       for M in [0:16) (Spatial-Y)
+|         for K in [0:32) (Spatial-X)
+
+LRF [ A:1 (1) ] 
+---------------
+|           for N in [0:8)
+|             << Compute >>

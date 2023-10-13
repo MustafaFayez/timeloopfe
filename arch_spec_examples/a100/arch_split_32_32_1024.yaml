@@ -1,0 +1,190 @@
+# assume 0.9 mem bw utilization as peak and 0.75 compute util as peak based on current measurements.
+architecture:
+  version: 0.4
+  nodes: # Top-level is hierarchical
+  - !Container # Top-level system
+    name: system
+    attributes:
+      technology: "45nm"
+
+  - !Element # DRAM main memory
+    name: DRAM
+    class: DRAM
+    attributes:
+      type: "LPDDR4"
+      width: 5120
+      datawidth: 8
+      cluster_size: 1
+      read_bandwidth: 1300 # 2039 GB/s / 1.41 GHz * 0.9
+      write_bandwidth: 1300 
+    constraints:
+      temporal: {permutation: [K], factors: K=1}
+
+  - !Container
+    name: a100
+    attributes:
+      technology: "45nm"
+
+  - !Element
+    name: L2
+    class: storage
+    subclass: SRAM_MD
+    attributes:
+      data_storage_depth: 81920
+      data_storage_width: 4096
+      n_banks: 5120
+      n_rdwr_ports: 2
+      datawidth: 8
+      cluster_size: 1
+      read_bandwidth: 4468 # 7 TB/s * 0.9 / 1.41 GHz
+      write_bandwidth: 4468
+      
+  - !Container
+    name: SM
+    spatial: {meshX: 108}
+
+  - !Element # 164KB data, 32KB metadata
+    name: SMEM
+    class: storage
+    subclass: SRAM_MD
+    attributes:
+      data_storage_depth: 1312 
+      data_storage_width: 1024
+      n_banks: 16
+      n_rdwr_ports: 2
+      metadata_storage_depth: 8192
+      metadata_storage_width: 64
+      datawidth: 8
+      cluster_size: 1
+      read_bandwidth: 112 # unit is word/cycle: 19TB/s / 108 SMs * 0.9 / 1.41GHz 
+      write_bandwidth: 112 
+         
+  - !Container # Subpartition
+    name: Subpartition
+    spatial: {meshY: 4}
+
+  - !Element # Register file
+    name: RF # Register file
+    class: storage
+    subclass: SRAM_MD
+    attributes:
+      # to accommodate for a dense Z with M=16 and N=128
+      data_storage_depth: 64 
+      data_storage_width: 8192
+      n_banks: 128
+      n_rdwr_ports: 2
+      datawidth: 8
+      cluster_size: 1
+
+  - !Container # PE
+    name: PE
+    spatial: {meshX: 32, meshY: 16} 
+
+  - !Element # Local register file
+    name: LRF 
+    class: storage
+    subclass: SRAM_MD
+    attributes:
+      data_storage_depth: 1
+      data_storage_width: 8
+      metadata_storage_depth: 1  
+      metadata_storage_width: 8
+      datawidth: 8
+      cluster_size: 1 
+
+  - !Element # MAC unit
+    name: MAC
+    class: compute
+    subclass: Imac
+    attributes:
+      datawidth: 8
+
+
+constraints:
+  targets:
+
+  #
+  # DRAM
+  #
+  - target: DRAM
+    type: temporal
+    permutation: [K]
+    factors: [K=1]     # avoid temporal reduction
+  
+  #
+  # L2
+  #
+  - target: L2
+    type: temporal
+    permutation: [K]
+    factors: [K=1, M=1] 
+  
+  - target: L2
+    type: dataspace
+    keep: [A,B,Z]
+
+  - target: SM
+    type: spatial
+    permutation: [K]
+    factors: [K=64]
+
+  # - target: SM
+  #   type: temporal
+  #   permutation: [M]
+  #   factors: [M=2]
+  
+  # 4 subpartitions mapped to spatial M in Y direction
+  - target: Subpartition
+    type: spatial
+    factors: [K=1, N=2, M=2]  
+    permutation: [N, K, M]
+    split: 0
+
+  #
+  # SMEM
+  #
+  - target: SMEM
+    type: dataspace
+    keep: [ A , B ]
+    bypass: [ Z ]
+
+  - target: SMEM
+    type: temporal
+    factors: [K=1, M=1, N=1]
+    permutation: [K]
+
+  #
+  # RF
+  #
+  # RF share the same M, N factor as LRF as LRF only store A not Z
+  - target: RF
+    type: temporal
+    factors: [K=1, M=1, N=1]
+    permutation: [N, K, M]
+
+  # RF is an accumulator
+  - target: RF
+    type: dataspace
+    keep: [ Z ]
+    bypass: [ A, B ]
+
+    # spatial K upper limited by a density 2:4
+  - target: PE
+    type: spatial
+    factors: [K=16, M=16, N=1]
+    permutation: [M, K, N]
+    split: 1
+ 
+  #
+  # LRF
+  #
+  - target: LRF
+    type: temporal     
+    factors: [M=1, N=4]    
+    permutation: [N, K, M]
+  
+  - target: LRF
+    type: dataspace
+    keep: [ A ]
+    bypass: [ B, Z ]
+

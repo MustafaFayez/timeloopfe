@@ -1,0 +1,22 @@
+DRAM [ A:256 (256) B:16384 (16384) Z:64 (64) ] 
+L2 [ A:256 (256) B:16384 (16384) Z:64 (64) ] 
+--------------------------------------------
+| for K in [0:2)
+
+inter_SM_spatial_dummy [ ] 
+--------------------------
+|   for N in [0:64) (Spatial-X)
+
+SMEM [ A:128 (128) B:128 (128) ] 
+inter_Subpartition_spatial_dummy [ ] 
+RF [ Z:1 (1) ] 
+--------------
+|     for K in [0:4)
+
+inter_PE_spatial_dummy [ ] 
+--------------------------
+|       for K in [0:32) (Spatial-X)
+
+LRF [ A:1 (1) ] 
+---------------
+|         << Compute >>

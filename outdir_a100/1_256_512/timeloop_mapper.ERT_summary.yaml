@@ -1,0 +1,83 @@
+ERT_summary:
+    version: '0.4'
+    table_summary:
+      - name: top_level.DRAM[1..1]
+        actions:
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+          - name: update
+            energy: 1.0
+        primitive_estimation(s):
+          - name: top_level.DRAM[1..1]
+            estimator: dummy_table
+      - name: top_level.L2[1..1]
+        actions:
+          - name: update
+            energy: 1.0
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+        primitive_estimation(s):
+          - name: top_level.L2[1..1]
+            estimator: dummy_table
+      - name: top_level.SMEM[1..108]
+        actions:
+          - name: update
+            energy: 1.0
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+        primitive_estimation(s):
+          - name: top_level.SMEM[1..108]
+            estimator: dummy_table
+      - name: top_level.RF[1..432]
+        actions:
+          - name: update
+            energy: 1.0
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+        primitive_estimation(s):
+          - name: top_level.RF[1..432]
+            estimator: dummy_table
+      - name: top_level.LRF[1..221184]
+        actions:
+          - name: update
+            energy: 1.0
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+        primitive_estimation(s):
+          - name: top_level.LRF[1..221184]
+            estimator: dummy_table
+      - name: top_level.MAC[1..221184]
+        actions:
+          - name: compute
+            energy: 1.0
+          - name: read
+            energy: 1.0
+          - name: write
+            energy: 1.0
+          - name: update
+            energy: 1.0
+          - name: idle
+            energy: 0.0
+        primitive_estimation(s):
+          - name: top_level.MAC[1..221184]
+            estimator: dummy_table

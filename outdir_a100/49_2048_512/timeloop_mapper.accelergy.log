@@ -1,0 +1,157 @@
+2023-10-12 16:44:37 INFO            _                _                      
+2023-10-12 16:44:37 INFO           / \   ___ ___ ___| | ___ _ __ __ _ _   _ 
+2023-10-12 16:44:37 INFO          / _ \ / __/ __/ _ \ |/ _ \ '__/ _` | | | |
+2023-10-12 16:44:37 INFO         / ___ \ (_| (_|  __/ |  __/ | | (_| | |_| |
+2023-10-12 16:44:37 INFO        /_/   \_\___\___\___|_|\___|_|  \__, |\__, |
+2023-10-12 16:44:37 INFO                                        |___/ |___/ 
+2023-10-12 16:44:37 INFO        generating outputs according to the following specified output flags... 
+2023-10-12 16:44:37 INFO         Please use the -f flag to update the preference (default to all output files)
+2023-10-12 16:44:37 INFO        {'ERT': 1, 'ERT_summary': 1, 'ART': 1, 'ART_summary': 1, 'energy_estimation': 1, 'flattened_arch': 1}
+2023-10-12 16:44:37 INFO        Located config file at /home/mustafa/.config/accelergy/accelergy_config.yaml.
+2023-10-12 16:44:37 INFO        config file located:
+2023-10-12 16:44:37 INFO        /home/mustafa/.config/accelergy/accelergy_config.yaml
+2023-10-12 16:44:37 INFO        Parsing file /tmp/timeloop_call_20231012-164437.yaml for architecture info
+2023-10-12 16:44:37 INFO        Parsing file /tmp/timeloop_call_20231012-164437.yaml for compound_components info
+2023-10-12 16:44:37 INFO        primitive component file parsed: 
+2023-10-12 16:44:37 INFO        /home/mustafa/.local/share/accelergy/primitive_component_libs/soc_primitives.lib.yaml
+2023-10-12 16:44:37 INFO        primitive component file parsed: 
+2023-10-12 16:44:37 INFO        /home/mustafa/.local/share/accelergy/primitive_component_libs/pim_primitive_component.lib.yaml
+2023-10-12 16:44:37 INFO        primitive component file parsed: 
+2023-10-12 16:44:37 INFO        /home/mustafa/.local/share/accelergy/primitive_component_libs/primitive_component.lib.yaml
+2023-10-12 16:44:37 WARNING     No compound component classes specified, architecture can only contain primitive components
+2023-10-12 16:44:37 INFO        Adding required action "update" to class DRAM
+2023-10-12 16:44:37 INFO        Adding required action "read" to class SRAM_MD
+2023-10-12 16:44:37 INFO        Adding required action "write" to class SRAM_MD
+2023-10-12 16:44:37 INFO        Adding required action "update" to class SRAM_MD
+2023-10-12 16:44:37 INFO        Adding required action "idle" to class SRAM_MD
+2023-10-12 16:44:37 INFO        Adding required action "compute" to class Imac
+2023-10-12 16:44:37 INFO        Adding required action "read" to class Imac
+2023-10-12 16:44:37 INFO        Adding required action "write" to class Imac
+2023-10-12 16:44:37 INFO        Adding required action "update" to class Imac
+2023-10-12 16:44:37 INFO        Adding required action "idle" to class Imac
+2023-10-12 16:44:37 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/accelergy-adc-plug-in/adc.estimator.yaml
+2023-10-12 16:44:37 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/accelergy-cacti-plug-in/cacti.estimator.yaml
+2023-10-12 16:44:37 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/accelergy-table-based-plug-ins/table.estimator.yaml
+2023-10-12 16:44:37 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/accelergy-library-plugin/library.estimator.yaml
+2023-10-12 16:44:38 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/dummy_tables/dummy.estimator.yaml
+2023-10-12 16:44:38 INFO        Estimator plug-in identified by: /home/mustafa/.local/share/accelergy/estimation_plug_ins/accelergy-aladdin-plug-in/aladdin.estimator.yaml
+2023-10-12 16:44:38 INFO        Found estimator plug-in: ADC Plug-In (<ADCEstimator.ADCEstimator object at 0x7efc839bc280>)
+2023-10-12 16:44:38 INFO        Found estimator plug-in: CACTI (<CactiWrapper.CactiWrapper object at 0x7efc839bdf60>)
+2023-10-12 16:44:38 INFO        Found estimator plug-in: table-based-plug-ins (<SetsOfTables.SetsOfTables object at 0x7efc83765390>)
+2023-10-12 16:44:38 INFO        Found estimator plug-in: Library (<LibraryEstimator.LibraryEstimator object at 0x7efc837659f0>)
+2023-10-12 16:44:38 INFO        Found estimator plug-in: dummy_table (<DummyTable.DummyTable object at 0x7efc837659c0>)
+2023-10-12 16:44:38 INFO        Found estimator plug-in: Aladdin_table (<AladdinTable.AladdinTable object at 0x7efc837661d0>)
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for DRAM(type=LPDDR4, width=5120, datawidth=8, cluster_size=1, read_bandwidth=1300, write_bandwidth=1300, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for DRAM(type=LPDDR4, width=5120, datawidth=8, cluster_size=1, read_bandwidth=1300, write_bandwidth=1300, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for DRAM(type=LPDDR4, width=5120, datawidth=8, cluster_size=1, read_bandwidth=1300, write_bandwidth=1300, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for DRAM(type=LPDDR4, width=5120, datawidth=8, cluster_size=1, read_bandwidth=1300, write_bandwidth=1300, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=81920, data_storage_width=4096, n_banks=5120, n_rdwr_ports=2, datawidth=8, cluster_size=1, read_bandwidth=4468, write_bandwidth=4468, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=81920, data_storage_width=4096, n_banks=5120, n_rdwr_ports=2, datawidth=8, cluster_size=1, read_bandwidth=4468, write_bandwidth=4468, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=81920, data_storage_width=4096, n_banks=5120, n_rdwr_ports=2, datawidth=8, cluster_size=1, read_bandwidth=4468, write_bandwidth=4468, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=81920, data_storage_width=4096, n_banks=5120, n_rdwr_ports=2, datawidth=8, cluster_size=1, read_bandwidth=4468, write_bandwidth=4468, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1312, data_storage_width=1024, n_banks=16, n_rdwr_ports=2, metadata_storage_depth=8192, metadata_storage_width=64, datawidth=8, cluster_size=1, read_bandwidth=112, write_bandwidth=112, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1312, data_storage_width=1024, n_banks=16, n_rdwr_ports=2, metadata_storage_depth=8192, metadata_storage_width=64, datawidth=8, cluster_size=1, read_bandwidth=112, write_bandwidth=112, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1312, data_storage_width=1024, n_banks=16, n_rdwr_ports=2, metadata_storage_depth=8192, metadata_storage_width=64, datawidth=8, cluster_size=1, read_bandwidth=112, write_bandwidth=112, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1312, data_storage_width=1024, n_banks=16, n_rdwr_ports=2, metadata_storage_depth=8192, metadata_storage_width=64, datawidth=8, cluster_size=1, read_bandwidth=112, write_bandwidth=112, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=64, data_storage_width=8192, n_banks=128, n_rdwr_ports=2, datawidth=8, cluster_size=1, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=64, data_storage_width=8192, n_banks=128, n_rdwr_ports=2, datawidth=8, cluster_size=1, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=64, data_storage_width=8192, n_banks=128, n_rdwr_ports=2, datawidth=8, cluster_size=1, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=64, data_storage_width=8192, n_banks=128, n_rdwr_ports=2, datawidth=8, cluster_size=1, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1, data_storage_width=8, metadata_storage_depth=1, metadata_storage_width=8, datawidth=8, cluster_size=1, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=3456, meshY=64).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1, data_storage_width=8, metadata_storage_depth=1, metadata_storage_width=8, datawidth=8, cluster_size=1, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=3456, meshY=64).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1, data_storage_width=8, metadata_storage_depth=1, metadata_storage_width=8, datawidth=8, cluster_size=1, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=3456, meshY=64).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for SRAM_MD(data_storage_depth=1, data_storage_width=8, metadata_storage_depth=1, metadata_storage_width=8, datawidth=8, cluster_size=1, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=3456, meshY=64).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64).compute()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64).read()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64).write()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64).update()
+2023-10-12 16:44:38 INFO        dummy_table estimated 1p with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        ENERGY ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64).idle()
+2023-10-12 16:44:38 INFO        dummy_table estimated 0p with accuracy 100%. 
+2023-10-12 16:44:38 WARNING     No action counts are specified as yaml input
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for DRAM(type=LPDDR4, width=5120, datawidth=8, cluster_size=1, read_bandwidth=1300, write_bandwidth=1300, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for SRAM_MD(data_storage_depth=81920, data_storage_width=4096, n_banks=5120, n_rdwr_ports=2, datawidth=8, cluster_size=1, read_bandwidth=4468, write_bandwidth=4468, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for dummy_storage(width=1, depth=1, datawidth=1, technology=-1, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=1, meshY=1)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for SRAM_MD(data_storage_depth=1312, data_storage_width=1024, n_banks=16, n_rdwr_ports=2, metadata_storage_depth=8192, metadata_storage_width=64, datawidth=8, cluster_size=1, read_bandwidth=112, write_bandwidth=112, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for dummy_storage(width=1, depth=1, datawidth=1, technology=-1, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=1)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for SRAM_MD(data_storage_depth=64, data_storage_width=8192, n_banks=128, n_rdwr_ports=2, datawidth=8, cluster_size=1, technology=-1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for dummy_storage(width=1, depth=1, datawidth=1, technology=-1, n_banks=2, cluster_size=1, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=108, meshY=4)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for SRAM_MD(data_storage_depth=1, data_storage_width=8, metadata_storage_depth=1, metadata_storage_width=8, datawidth=8, cluster_size=1, technology=-1, n_banks=2, reduction_supported=True, multiple_buffering=1, min_utilization=0, allow_overbooking=False, meshX=3456, meshY=64)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        
+2023-10-12 16:44:38 INFO        AREA ESTIMATION for Imac(datawidth=8, technology=-1, meshX=3456, meshY=64)
+2023-10-12 16:44:38 INFO        dummy_table estimated 1u^2 with accuracy 100%. 
+2023-10-12 16:44:38 INFO        flattened architecture is saved to:
+2023-10-12 16:44:38 INFO        ./timeloop_mapper.flattened_architecture.yaml
+2023-10-12 16:44:38 INFO        energy reference table is saved to:
+2023-10-12 16:44:38 INFO        ./timeloop_mapper.ERT.yaml
+2023-10-12 16:44:38 INFO        energy reference table summary is saved to:
+2023-10-12 16:44:38 INFO        ./timeloop_mapper.ERT_summary.yaml
+2023-10-12 16:44:38 WARNING     no runtime energy estimations are generated... not generating energy_estimation.yaml
+2023-10-12 16:44:38 INFO        area reference table is saved to:
+2023-10-12 16:44:38 INFO        ./timeloop_mapper.ART.yaml
+2023-10-12 16:44:38 INFO        area reference table summary is saved to:
+2023-10-12 16:44:38 INFO        ./timeloop_mapper.ART_summary.yaml
